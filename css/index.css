@@ -9,6 +9,7 @@
 
 /* 공통 헤더 */
 .appHeader {
+  position: relative;
   padding: var(--spacing-base) var(--spacing-lg);
 }
 
@@ -17,8 +18,10 @@
   background-color: yellowgreen;
   width: 12.75rem; /* 204px */
   height: 3.75rem; /* 60px */
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
-
 .logo__link {
   display: block;
   width: 100%;
@@ -103,3 +106,7 @@ fieldset {
 - max-width :100% / height : auto (반응형과 적응형)
 - 적응형(AWD) : 서버 또는 브라우저에서 기기 감지, 필요 코텐츠만 다운로드, 기기 마다 다른 템플릿, 빠름, 기존 사이트 변경없이 개발 가능하지만, 추가 비용이 발생
 - 반응형(RWD) : 미디어쿼리로 기기 감지, 모든 콘텐츠 다운로드(단점), 하나의 템플릿, 느림, 기존 사이트를 전면 리뉴얼하여 개발  */
+/* 
+position ->static : 마크업한 순서대로
+bottom: initial; initial은 기본값
+left: initial; */
