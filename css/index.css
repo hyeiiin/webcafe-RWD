@@ -12,6 +12,7 @@
 /* 공통 스타일 */
 /* 공통 로고 */
 .logo {
+  background-color: yellowgreen;
   width: 12.75rem; /* 204px */
   height: 3.75rem; /* 60px */
 }
@@ -42,9 +43,46 @@ input[type="search"] {
   appearance: none;
 }
 
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 0.25rem;
+  height: 2rem;
+  padding: 0.125rem 0.75rem;
+  background: transparent;
+}
+
+.button--fillSecondary {
+  color: var(--white);
+  background: var(--secondary-color);
+}
+
+.button--outlineSecondary {
+  color: var(--secondary-color);
+  border: 1px solid currentColor;
+}
+
 .formInput__input {
   border: 1px solid var(--border-color);
   border-radius: 0.25rem;
   height: 2rem;
   padding: 0.125rem 0.75rem;
 }
+
+.searchForm__group {
+  background-color: skyblue;
+}
+
+- currentColor는 현재 칼라 그대로 쓰겠다.
+- currentColor는 만약 color값이 없다면 그냥 기본 color로 적용
+- fillSecondary <-> outlineSecondary
+- text-Lg 글자 크기 크게
+- p-0 : 패딩 0
+- cursor: pointer : 버튼의 커서를 바꿈
+- max-width :100% / height : auto (반응형과 적응형)
