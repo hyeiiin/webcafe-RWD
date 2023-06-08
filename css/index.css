@@ -15,7 +15,6 @@
 
 /* 공통 로고 */
 .logo {
-  background-color: yellowgreen;
   width: 12.75rem; /* 204px */
   height: 3.75rem; /* 60px */
 }
@@ -31,6 +30,11 @@
 .memberOnly {
   padding-left: 0;
   list-style: none;
+  display: flex;
+  /* 오른쪽으로 정렬 */
+  justify-content: flex-end;
+  /* 현재 헷갈릴 수 있으니 row 적어둠 */
+  flex-direction: row;
 }
 
 /* 공통 검색 폼 */
@@ -72,40 +76,74 @@ fieldset {
   padding: 0.125rem 0.75rem;
   width: 100%;
 }
-
-.searchForm__group {
-  background-color: skyblue;
+.formInput {
+  background-color: teal;
 }
-
+.searchForm__group {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-xs);
+}
+.searchForm__group .formInput {
+  /* 여백 띄우기
+  margin-right: 8px; */
+}
 /* 모바일 디바이스 */
 @media (min-width: 320px) and (max-width: 767px) {
   /* 모바일 헤더 */
   .appHeader {
     color: var(--white);
     background: var(--primary-color);
-  }
-
-  /* 모바일 로고 */
-  .logo {
-    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
   }
   /* 모바일 멤버서비스 */
-
+  .memberOnly {
+    order: -1;
+  }
   /* 모바일 검색폼 */
+  .searchForm__group .formInput {
+    flex-grow: 1;
+  }
 }
-
 /* 데스크탑 디바이스 */
 @media (min-width: 768px) {
   /* 데스크탑 헤더 */
   .appHeader {
     background-color: yellow;
+    display: grid;
+    /* 1fr의 갯수는 분수 1/갯수인 %를 뜻 함 */
+    grid-template-columns: 204px 1fr;
+    gap: var(--spacing-base);
+    max-width: var(container-width);
+    /* 행
+    grid-template-rows: auto auto; */
   }
   /* 데스크탑 로고 */
   .logo {
-    background: red;
+    grid-area: 1 / 1 / 3 / 2;
+    /* 로고 자기자신을 가운데로! */
+    align-self: center;
+    /* 1. 풀이 : 
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 3;
+    grid-column-end: 2; */
+    /* 
+    2. 풀이 :
+    grid-row: 1/3;
+    grid-column: 1/2;     */
   }
 
   /* 데스크탑 멤버서비스 */
 
   /* 데스크탑 검색 폼 */
+  .searchForm__group {
+    /* 오른쪽으로 정렬 */
+    justify-content: flex-end;
+  }
+  .searchForm__group .formInput {
+    width: 25rem;
+  }
 }
