@@ -1,0 +1,66 @@
+body {
+  margin: 100px;
+}
+
+.container {
+  border: 10px solid blue;
+  display: flex;
+  /* 플렉스를 지정하기 전 하지만 일반적인 블럭이 아님 */
+  /* 위에서 아래로 정렬 : column 왼쪽에서 오른쪽 정렬 : row */
+  flex-direction: row;
+  width: 1000px;
+  /* wrap 줄 바꿈 허용 */
+  flex-wrap: wrap;
+}
+/* flex-basis 플렉스 아이템의 초기 크기를 지정 (width와 같은 개념) */
+
+.item1 {
+  background-color: yellow;
+  /* 아이템1번 맨 아래로 배치 디폴트 값이 0이라서 0보다 아래인 1인 자리*/
+  order: 1;
+  flex-basis: 50px;
+  /* 나머지 크기를 맞춰서 확대 늘어남 (현재 1000-500 이므로 item1은 550을 차지하게 됨) */
+  flex-grow: 1;
+  /* 나머지 크기를 맞춰서 축소 */
+  flex-shrink: 1;
+  /* 순서대로 grow shrink basis 함축 */
+  /* ! flex: 1 1 50px; */
+}
+.item2 {
+  background-color: pink;
+  flex-basis: 50px;
+}
+.item3 {
+  background-color: skyblue;
+  flex-basis: 50px;
+}
+.item4 {
+  background-color: lime;
+  flex-basis: 50px;
+}
+.item5 {
+  background-color: salmon;
+  width: 50px;
+}
+.item6 {
+  background-color: silver;
+  width: 50px;
+}
+.item7 {
+  background-color: teal;
+  flex-basis: 50px;
+}
+.item8 {
+  background-color: aqua;
+  flex-basis: 50px;
+}
+.item9 {
+  background-color: violet;
+  flex-basis: 50px;
+}
+.item10 {
+  background-color: olive;
+  flex-basis: 50px;
+  /* 아이템10번 맨 위로 배치 : 디폴트 값이 0이라서 0보다 위인 -1인 자리 */
+  order: -1;
+}
