@@ -79,10 +79,17 @@ fieldset {
   border-radius: 0.25rem;
   height: 2rem;
   padding: 0.125rem 0.75rem;
+  width: 100%;
 }
 
 .searchForm__group {
   background-color: skyblue;
+}
+
+.searchForm__group .formInput {
+  display: inline-block;
+  width: calc(100% - 60px);
+  margin-right: 4px;
 }
 
 /* 모바일 디바이스 */
@@ -129,21 +136,8 @@ fieldset {
   .searchForm__group {
     text-align: right;
   }
+
+  .searchForm__group .formInput {
+    width: 400px;
+  }
 }
-
-/* 
-- currentColor는 현재 칼라 그대로 쓰겠다.
-- currentColor는 만약 color값이 없다면 그냥 기본 color로 적용
-- fillSecondary <-> outlineSecondary
-- text-Lg 글자 크기 크게
-- p-0 : 패딩 0
-- cursor: pointer : 버튼의 커서를 바꿈
-- max-width :100% / height : auto (반응형과 적응형)
-- 적응형(AWD) : 서버 또는 브라우저에서 기기 감지, 필요 코텐츠만 다운로드, 기기 마다 다른 템플릿, 빠름, 기존 사이트 변경없이 개발 가능하지만, 추가 비용이 발생
-- 반응형(RWD) : 미디어쿼리로 기기 감지, 모든 콘텐츠 다운로드(단점), 하나의 템플릿, 느림, 기존 사이트를 전면 리뉴얼하여 개발  */
-/* 
-position ->static : 마크업한 순서대로
-bottom: initial; initial은 기본값
-left: initial; */
-
-- 
