@@ -48,6 +48,12 @@ fieldset {
   padding: 0;
 }
 
+.button--none {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
 .button {
   cursor: pointer;
   border: 0;
@@ -121,16 +127,15 @@ fieldset {
     position: absolute;
     right: var(--spacing-lg);
     top: 3.75rem;
+    overflow: hidden;
   }
 
   .button--burger {
     position: relative;
+    display: block;
     width: 1.875rem;
     height: 1.875rem;
     background-color: blue;
-    /* display: flex;
-    flex-direction: column;
-    gap: 15px; */
   }
 
   .button--burgerBarTop,
@@ -140,21 +145,39 @@ fieldset {
     left: 0;
     width: 100%;
     height: 20%;
-    background-color: var(--white);
+    background: var(--white);
     border-radius: 1.5rem;
+    transition: all 400ms;
   }
 
   .button--burgerBarTop {
     top: 0;
   }
+
   .button--burgerBarMiddle {
     top: 50%;
     transform: translateY(-50%);
   }
+
   .button--burgerBarBottom {
     top: 100%;
     transform: translateY(-100%);
   }
+
+  .is--active .button--burgerBarTop {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .is--active .button--burgerBarMiddle {
+    transform: translate(-120%, -50%);
+  }
+
+  .is--active .button--burgerBarBottom {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
   /* 모바일 메인 메뉴 */
   .menu__list {
     background: var(--accent-opacity-color);
