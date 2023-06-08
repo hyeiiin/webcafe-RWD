@@ -76,9 +76,7 @@ fieldset {
   padding: 0.125rem 0.75rem;
   width: 100%;
 }
-.formInput {
-  background-color: teal;
-}
+
 .searchForm__group {
   display: flex;
   flex-direction: row;
@@ -92,14 +90,14 @@ fieldset {
 @media (min-width: 320px) and (max-width: 767px) {
   /* 모바일 헤더 */
   .appHeader {
-    color: var(--white);
     background: var(--primary-color);
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
+    gap: var(--spacing-sm);
   }
   /* 모바일 멤버서비스 */
   .memberOnly {
+    color: var(--white);
     order: -1;
   }
   /* 모바일 검색폼 */
@@ -111,7 +109,6 @@ fieldset {
 @media (min-width: 768px) {
   /* 데스크탑 헤더 */
   .appHeader {
-    background-color: yellow;
     display: grid;
     /* 1fr의 갯수는 분수 1/갯수인 %를 뜻 함 */
     grid-template-columns: 204px 1fr;
@@ -119,6 +116,8 @@ fieldset {
     max-width: var(container-width);
     /* 행
     grid-template-rows: auto auto; */
+    margin-left: auto;
+    margin-right: auto;
   }
   /* 데스크탑 로고 */
   .logo {
@@ -146,4 +145,27 @@ fieldset {
   .searchForm__group .formInput {
     width: 25rem;
   }
+}
+
+/* 데스크탑 메인 메뉴 */
+.menu {
+  background: var(--secondary-color);
+  padding: var(--spacing-base) var(--spacing-lg);
+}
+
+.menu__list {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--container--width);
+  padding-left: 0;
+  list-style: none;
+  color: var(--white);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.menu__link {
+  display: block;
+  padding: var(--spacing-sm);
 }
