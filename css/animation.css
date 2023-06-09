@@ -1,0 +1,65 @@
+/* 한 줄 폭이 넓어짐
+  height: 100vh;
+  여러줄로 그라데이션
+  background-image: linear-gradient(-45deg, red 30%, green 100%);
+  한줄로만 나타나게 됨
+  background-repeat: no-repeat; */
+/* repeat은 이미지를 반복하지 않겠다는 의미 */
+/* 글자가 떨어져 있는 이유는 agent style의 마진 때문에 위에 떨어져 보임 -> div 써주면 해결*/
+/* @는 선언 표시 */
+/* @keyframes moveEffect { from{} to{} } */
+/* margin은 움직이는데 성공을 할 수 있겠지만 텍스트말고도 상자까지 움직임 -> padding, transform*/
+body {
+  height: 100vh;
+  background: url(./../assets/bg_flower.png) no-repeat 50% 0,
+    linear-gradient(to bottom, #aaa, #ccc, #eee, #fff) repeat 0 0;
+  padding-top: 110px;
+}
+
+/* keyframe 선언 */
+@keyframes moveEffect {
+  0% {
+    /* background: yellow; */
+    /* margin: 0;
+    padding: 0; */
+    /* transform: translate(0,0); */
+    top: 0;
+    left: 0;
+    /* 글자 점점 커지기 */
+    font-size: 12px;
+    /* 글자 투명도 점점 선명하게 */
+    color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background: pink;
+    /* padding: 75px 0 0 400px; */
+    /* transform: translate(400px, 75px); */
+    top: 75px;
+    left: 400px;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 1);
+  }
+}
+
+.visual {
+  /* 애니메이션 효과 - 필수 2개 */
+  /* animation-name: moveEffect;
+  animation-duration: 3s; */
+  /* 애니메이션 효과를 유지 - 선택*/
+  /* animation-fill-mode: forwards; */
+  /* border: 1px solid green; */
+  width: 940px;
+  height: 120px;
+  /* 가운데 정렬 */
+  margin: 0 auto;
+  background-color: skyblue;
+  position: relative;
+}
+
+.visual-text {
+  position: absolute;
+  /* display: inline-block; */
+  animation-name: moveEffect;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
