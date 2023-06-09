@@ -31,7 +31,7 @@
   padding-left: 0;
   list-style: none;
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: flex-end;
 }
 
@@ -83,7 +83,7 @@ fieldset {
 
 .searchForm__group {
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   gap: var(--spacing-xs);
 }
 
@@ -107,7 +107,7 @@ fieldset {
   .appHeader {
     background: var(--primary-color);
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
     gap: var(--spacing-sm);
   }
 
@@ -164,16 +164,16 @@ fieldset {
     transform: translateY(-100%);
   }
 
-  .is--active .button--burgerBarTop {
+  .button--burger.is--active .button--burgerBarTop {
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
   }
 
-  .is--active .button--burgerBarMiddle {
+  .button--burger.is--active .button--burgerBarMiddle {
     transform: translate(-120%, -50%);
   }
 
-  .is--active .button--burgerBarBottom {
+  .button--burger.is--active .button--burgerBarBottom {
     top: 50%;
     transform: translateY(-50%) rotate(-45deg);
   }
@@ -190,6 +190,11 @@ fieldset {
     backdrop-filter: blur(4px);
     padding: var(--spacing-lg);
     transform: translateX(-150%);
+    transition: all 400ms;
+  }
+
+  .menu.is--active .menu__list {
+    transform: none;
   }
 
   .menu__item {
@@ -239,7 +244,7 @@ fieldset {
     max-width: var(--container-width);
     color: var(--white);
     display: flex;
-    flex-direction: row;
+    flex-flow: row nowrap;
     justify-content: space-evenly;
   }
 
