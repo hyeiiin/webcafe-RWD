@@ -10,6 +10,11 @@ body {
   font-size: var(--text-sm);
 }
 
+/* 공통 아이콘 */
+.far {
+  margin-right: var(--spacing-xs);
+}
+
 /* 공통 헤더 */
 .appHeader {
   position: relative;
@@ -112,7 +117,9 @@ fieldset {
 
 /* 공통 메인 콘텐츠 제목 */
 .sprite {
-  background: silver url(./../images/sprite_main.png) no-repeat;
+  background: url(./../images/sprite_main.png) no-repeat;
+  padding-left: 4.0625rem;
+  height: 3.75rem;
 }
 
 .spriteBook {
@@ -123,11 +130,37 @@ fieldset {
   background-position: 0 -230px;
 }
 
+.spriteBoard {
+  background-position: 0 -115px;
+}
+
+.spriteFavorite {
+  background-position: 0 -345px;
+}
+
+.spriteTwitter {
+  background-position: 0 -460px;
+}
+
+.accentBook {
+  color: var(--accent-book);
+}
+.accentNews {
+  color: var(--accent-news);
+}
+.accentBoard {
+  color: var(--accent-board);
+}
+.accentFavorite {
+  color: var(--accent-favorite);
+}
+.accentTwitter {
+  color: var(--accent-twitter);
+}
+
 .appMain [class*="__title"] {
   display: flex;
   flex-flow: column nowrap;
-  height: 3.75rem;
-  padding-left: 4.0625rem;
   justify-content: center;
 }
 
@@ -140,14 +173,41 @@ fieldset {
   font-size: var(--text-base);
 }
 
+.appMain [class*="__summary"] {
+  line-height: 1.5;
+  margin-top: var(--spacing-base);
+}
+
 /* 공통 추천서적 */
-.book {
-  background: yellow;
+.book__cover {
+  width: 60%;
+  text-align: center;
+  margin: var(--spacing-base) auto;
+}
+
+.book__coverCaption {
+  margin-top: var(--spacing-sm);
+}
+
+.book__info {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.ratingStar {
+  font-size: var(--text-lg);
 }
 
 /* 공통 새소식 */
-.news {
-  background: pink;
+.news__video {
+  margin-top: var(--spacing-sm);
+}
+
+.news__date {
+  display: block;
+  text-align: right;
+  margin-top: var(--spacing-sm);
 }
 
 /* 공통 게시판 */
@@ -340,21 +400,17 @@ fieldset {
   }
   .news {
     grid-area: news;
-    height: 200px;
   }
   .book {
     grid-area: book;
-    height: 400px;
   }
   .board {
     grid-area: board;
   }
   .favorite {
     grid-area: favorite;
-    height: 200px;
   }
   .twitter {
     grid-area: twitter;
-    height: 200px;
   }
 }
