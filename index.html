@@ -23,7 +23,7 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css"
     />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <!-- <script src="js/navigation.js" defer></script> -->
   </head>
 
@@ -144,24 +144,15 @@
           <span class="news__enTitle accentNews">WebCafe News</span>
         </h2>
         <figure class="news__videoContainer">
-          <video
-            src="./media/stories.mp4"
-            class="news__video"
-            poster="./media/poster.jpg"
-            controls
-            type="video/mp4"
-            aria-labelledby="videoSubject"
-          >
-            <track
-              src="./media/stories-en.vtt"
-              kind="captions"
-              srclang="en"
-              label="영어 자막"
-            />
-          </video>
-          <figcaption class="a11yHidden" id="videoSubject">
-            구글 개발자 이야기
-          </figcaption>
+          <div class="iframeWrapper">
+            <iframe
+              src="https://www.youtube.com/embed/h77tXLhMF7o"
+              title="스크린리더 착한마크업 - 별점,평점 편"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <figcaption class="a11yHidden">구글 개발자 이야기</figcaption>
         </figure>
         <p class="news__summary">
           구글플레이는 다양한 분야에서 활약하고 있는 국내 개발사들을 모시고 직접
