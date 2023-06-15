@@ -162,6 +162,7 @@ fieldset {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  margin-bottom: var(--spacing-base);
 }
 
 .appMain [class*="__koTitle"] {
@@ -182,7 +183,7 @@ fieldset {
 .book__cover {
   width: 60%;
   text-align: center;
-  margin: var(--spacing-base) auto;
+  margin: 0 auto;
 }
 
 .book__coverCaption {
@@ -200,10 +201,6 @@ fieldset {
 }
 
 /* 공통 새소식 */
-.news__videoContainer {
-  margin-top: var(--spacing-sm);
-}
-
 .iframeWrapper {
   position: relative;
   padding-top: 56.25%;
@@ -287,17 +284,14 @@ iframe {
 }
 
 /* 공통 트위터 */
-.twitter__container {
-  background: yellow;
-}
-
 .twitter__userInfo {
-  background: pink;
   display: inline-flex;
 }
 
 .twitter__userProfile {
   float: right;
+  shape-outside: circle(50%);
+  shape-margin: 1em;
   width: clamp(60px, 20%, 80px);
   aspect-ratio: 1/1;
 }
@@ -311,8 +305,26 @@ iframe {
 }
 
 .twitter__summary {
-  margin: 0;
+  margin: var(--spacing-sm) 0 var(--spacing-xs) 0;
 }
+
+/* 공통 푸터 */
+.appFooter {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--spacing-base);
+}
+
+.address {
+  font-style: normal;
+}
+.copyright {
+  font-size: 100%;
+}
+
 /* 모바일 디바이스 */
 @media (min-width: 320px) and (max-width: 767px) {
   /* 모바일 헤더 */
@@ -420,6 +432,13 @@ iframe {
   .appMain {
     grid-template-columns: 100%;
     grid-template-rows: auto;
+    gap: var(--spacing-base);
+  }
+
+  /* 모바일 푸터 */
+  .address {
+    display: flex;
+    flex-flow: column nowrap;
   }
 }
 
@@ -500,5 +519,9 @@ iframe {
   }
   .twitter {
     grid-area: twitter;
+  }
+  /* 데스크탑 푸터 */
+  .appFooter {
+    align-items: center;
   }
 }
